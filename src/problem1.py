@@ -126,7 +126,7 @@ def problem1(n):
       :rtype: int
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # **** IMPORTANT ****:
     # We supplied a   fibonacci   function above.
@@ -140,10 +140,13 @@ def problem1(n):
     # As always, CONTINUE to the next problem if you are STUCK on this one.
     # -------------------------------------------------------------------------
 
-    num = 1
+    fibo = [0, 1]
     while True:
-        if fibonacci(num) >= n:
-            return fibonacci(num)
+        for k in range(len(fibo)):
+            if fibo[k] >=n:
+                return fibo[k - 1]
+        fibo = fibo + [fibo[len(fibo) - 1] + fibo[len(fibo) - 2]]
+
 
 
 ###############################################################################
